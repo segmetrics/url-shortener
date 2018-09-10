@@ -1,13 +1,12 @@
 [SegMetrics](https://segmetrics.io/) Custom URL Shortener
 ==========================================================
-_[SegMetrics](https://segmetrics.io) provides a single dashboard to understand the return you get on you marketing dollars.
+_[SegMetrics](https://segmetrics.io) provides a single dashboard to understand the return you get on your marketing dollars.
 Get 100% clarity on where your leads come from, how they act, and how much your marketing is really worth. **[Get started today!](https://segmetrics.io)**_
 
 ---
 
 The SetMetrics customer URL Shortener is an easy way to set up your own short URLs 
-without relying on third parties like Bit.ly and Goo.gl that strip valuable UTM and Ad tracking
-information from your links.
+without relying on third parties like Bit.ly and Goo.gl that strip valuable UTM and source information from your links.
 
 The URL Shortener has no external requirements and can run either from a top-level domain (like [mtr.cx](http://mtr.cx)), subdomain ([seg.mtr.cx](https://seg.mtr.cx)) or subfolder ([mtr.cx/to/](https://mtr.cx/to/))
 
@@ -18,7 +17,7 @@ The SegMetrics URL Shortener is written in plain PHP, and does not use a databas
 It has no external requirements other than being able to run PHP 5.6 or greater.
 You can install this alongside WordPress, or any other site, as long as you install it in a sub-folder.
  
-1. To get started with the URL Shortener on your server, [https://github.com/segmetrics/url-shortener/archive/master.zip](Download the Latest Release)
+1. To get started with the URL Shortener on your server, [Download the Latest Release](https://github.com/segmetrics/url-shortener/archive/master.zip)
 from the **Download** button, above.
 
 2. If you are using a top-level domain, or a subdomain, upload the files to the root directory on your server, like below.
