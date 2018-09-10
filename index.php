@@ -5,6 +5,12 @@
 $subFolder = dirname($_SERVER['SCRIPT_NAME']) == '/' ? '' : dirname($_SERVER['SCRIPT_NAME']);
 $link = trim( str_replace($subFolder, '', strtok($_SERVER['REQUEST_URI'], '?')), '/');
 
+// Check if we need to do the initial settings
+// ------------------------------------------
+if (!file_exists('./data/config.cfg')) {
+    header("Location: {$subFolder}/admin/");
+}
+
 // Get the Slug from the data file
 // ------------------------------------------
 $fileName = str_replace(['..', '/', '.'], '', $link);

@@ -103,6 +103,9 @@ switch($action){
         deleteLink($_POST['old']);
         die(json_encode(createLink($_POST['dest'], $_POST['link'])));
         break;
+    case 'settings-edit':
+        require_once ('tpl/settings.php');
+        break;
 }
 
 require_once ('tpl/app.php');

@@ -17,7 +17,15 @@ foreach($files as $file){
                 <img src="./assets/img/logo-white.png" alt="SegMetrics">
             </a></div>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="./?action=logout" data-method="POST">Logout</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= $config['user']?> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="./?action=settings-edit">Settings</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="./?action=logout" data-method="POST">Logout</a></li>
+                </ul>
+            </li>
+
         </ul>
 
     </div>

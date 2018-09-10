@@ -38,7 +38,7 @@ README.md
 4. Choose a Username and Password for the URL Shortener. This will be required to log in later.
 Your password is hashed and stored securely on the server.
 
-5. Log in with the Username and Password that you just created. **Congratulations! You're done!**
+5. Log in to the `/admin` page with the Username and Password that you just created. **Congratulations! You're done!**
 
 
 FAQ

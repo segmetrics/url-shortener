@@ -6,10 +6,12 @@
                 <h2 class="panel-title">Initial Setup</h2>
             </div>
             <div class="panel-body">
+                <p>In order to get started, we need to set up a user.</p>
                 <p>
-                    In order to get started, we need to set up a user. If you ever need to reset your login, delete the
-                    <code>/data/config.php</code> file, and you'll be back on this page!
+                    Once you create your user, you'll be able to log in to the admin panel from this page:
+                    <a href="<?= DOMAIN . 'admin' ?>"><?= DOMAIN . 'admin' ?></a>.
                 </p>
+                <p><strong>Be sure to bookmark that link!</strong></p>
 
                 <?php if(!file_exists('../data')): ?>
                     <div class="alert alert-danger">
