@@ -1,0 +1,129 @@
+body{
+  font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #636b6f;
+  background-color: #eee;
+}
+
+.container{
+  max-width: 960px;
+  &.container-sm{ max-width: 640px;}
+}
+
+// Section Blocks
+// -------------------------------------
+section{
+  padding: 40px 0;
+  &.hero{
+    background: #42abcc;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-image: linear-gradient(161deg, #1b5598 0%, #42abcc 100%);
+    text-shadow: none;
+    color: white;
+    h1,h2,h3{ color: white;}
+  }
+  &.white{
+    background: white;
+  }
+  &.footer{
+    h1,h2,h3,h4{ color: white; font-weight: 100;}
+    color: #fff;
+    background: #303030;
+    text-align: center;
+    padding: 80px 0;
+    a, a:hover, a:active{ color: #f42156}
+  }
+}
+
+
+// Typography
+// -------------------------------------
+h1,h2,h3,h4,h5{ color: #333;}
+h1{ font-weight: 900;}
+h2, h3, h4{  font-weight: 700;}
+
+// Buttons
+// -------------------------------------
+.btn{
+  border-radius: 2px;
+  &.btn-lg{
+    padding: 10px 16px;
+    font-size: 20px;
+    line-height: 1.3333333;
+    border-radius: 2px;
+  }
+  &.btn-primary {
+    color: #fff;
+    background-color: #f42156;
+    border-color: #f00c45;
+    &:active, &:hover {
+      background-color: #d70b3e;
+      border-color: #b50934;
+    }
+  }
+}
+
+// Forms
+// -------------------------------------
+.form-control{
+  border: 1px solid #cad5dd;
+  border-radius: 2px;
+}
+.input-group-lg>.form-control{border-radius: 3px 0 0 3px;}
+.input-group-lg>.input-group-btn>.btn{ border-radius: 0 3px 3px 0; }
+
+// Containers
+// -------------------------------------
+.panel{
+  margin-bottom: 25px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  &.panel-default{
+    border-color: #d8d7d7;
+  }
+  .panel-title{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 100;
+  }
+}
+
+.navbar{
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: #333333;
+  min-height: 40px;
+  height: 40px;
+  font-size: .9em;
+
+
+  .navbar-header .navbar-brand {
+    padding-top: 7px;
+    padding-bottom: 0;
+    height: 39px;
+    img {
+      display: inline-block;
+      height: 24px;
+    }
+    .provided{
+      font-style: oblique;
+      font-size: 14px;
+      line-height: 24px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  .navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 29px;
+    color: #b6b6b6;
+  }
+}
