@@ -9,6 +9,7 @@ $link = trim( str_replace($subFolder, '', strtok($_SERVER['REQUEST_URI'], '?')),
 // ------------------------------------------
 if (!file_exists('./data/config.cfg')) {
     header("Location: {$subFolder}/admin/");
+    die();
 }
 
 // Get the Slug from the data file
