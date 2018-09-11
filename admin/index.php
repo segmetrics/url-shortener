@@ -16,8 +16,21 @@ setToken();
 // Get the current Domain / folder
 // -----------------------------------------
 $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-define('DOMAIN', $protocol . $_SERVER['HTTP_HOST'] . dirname(dirname($_SERVER['SCRIPT_NAME'])) .'/');
+define('DOMAIN', $protocol . $_SERVER['HTTP_HOST'] . rtrim(dirname(dirname($_SERVER['SCRIPT_NAME'])), '/') .'/');
 define('DATA_DIR', '../data/');
+
+// Setup Our Data Directory
+if(!file_exists(DATA_DIR)){
+    mkdir(DATA_DIR);
+}
+
+// Set what our config file is (needed for shared hosting that doesn't support writing .php files)
+$_cfgFile = '';
+if(file_exists(DATA_DIR . 'config.php')){$_cfgFile = 'config.php';}
+elseif(file_exists(DATA_DIR . 'config.cfg')){$_cfgFile = 'config.cfg';}
+elseif(touch(DATA_DIR . '_config.php')){ unlink(DATA_DIR . '_config.php'); $_cfgFile = 'config.php';}
+elseif(touch(DATA_DIR . '_config.cfg')){ unlink(DATA_DIR . '_config.cfg'); $_cfgFile = 'config.cfg';}
+define('CONFIG_FILE', DATA_DIR . $_cfgFile);
 
 
 /************************************************************
@@ -28,7 +41,7 @@ define('DATA_DIR', '../data/');
 // ---------------------------------------
 if($action == 'settings'){
     $pwHash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $success = file_put_contents(DATA_DIR . 'config.cfg', "<?php
+    $success = file_put_contents(CONFIG_FILE, "<?php
 return [
     'user' => '{$_POST["username"]}',
     'pass' => '{$pwHash}',
@@ -45,10 +58,7 @@ return [
     }
 
 
-} elseif (!file_exists(DATA_DIR . 'config.cfg')) {
-
-    // Try to set up the data directory
-    mkdir(DATA_DIR);
+} elseif (!file_exists(CONFIG_FILE)) {
 
     require_once ('tpl/settings.php');
     exit();
@@ -56,7 +66,7 @@ return [
 
 // Use Config File
 // ---------------------------------------
-$config = require_once DATA_DIR . 'config.cfg';
+$config = require_once CONFIG_FILE;
 
 
 // Perform Login

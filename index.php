@@ -7,7 +7,7 @@ $link = trim( str_replace($subFolder, '', strtok($_SERVER['REQUEST_URI'], '?')),
 
 // Check if we need to do the initial settings
 // ------------------------------------------
-if (!file_exists('./data/config.cfg')) {
+if (!file_exists('./data/config.php') && !file_exists('./data/config.cfg')) {
     header("Location: {$subFolder}/admin/");
     die();
 }
